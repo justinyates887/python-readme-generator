@@ -9,8 +9,8 @@ root.title('EZ-README')
 root.iconbitmap('run/assets/ico.ico')
 
 #Buttons
-github_button = Button(root, text="Add GitHub URL", width=20, bg='#c1bdbd')
-title_button = Button(root, text="Add Title", width=20, bg='#c1bdbd', command=lambda: get_data(title_entry))
+github_button = Button(root, text="Add GitHub URL", width=20, bg='#c1bdbd', command=lambda: add_github(github_entry, preview_entry))
+title_button = Button(root, text="Add Title", width=20, bg='#c1bdbd', command=lambda: add_title(title_entry, preview_entry))
 description_button = Button(root, text="Add Description", width=20, bg='#c1bdbd')
 install_button = Button(root, text='Add Installation Process', width=20, bg='#c1bdbd')
 usage_button = Button(root, text='Add Usage', width=20, bg='#c1bdbd')
@@ -20,7 +20,7 @@ demo_button = Button(root, text='Add Demo Images', width=20, bg='#b4b4b4')
  
 #License Buttons
 mit_image = ImageTk.PhotoImage(Image.open('run/assets/mit.PNG'))
-mit_button = Button(root, image=mit_image)
+mit_button = Button(root, image=mit_image, command=lambda: add_license(preview_entry))
 gnu_image = ImageTk.PhotoImage(Image.open('run/assets/gnu.PNG'))
 gnu_button = Button(root, image=gnu_image)
 apache_image = ImageTk.PhotoImage(Image.open('run/assets/apache.PNG'))
