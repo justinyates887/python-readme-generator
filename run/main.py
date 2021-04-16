@@ -1,29 +1,41 @@
+from populate import *
+
 from tkinter import *
+from tkinter import ttk
+from PIL import ImageTk,Image
 
 root = Tk()
 root.title('EZ-README')
 root.iconbitmap('run/assets/ico.ico')
 
 #Buttons
-github_button = Button(root, text="Add GitHub URL", width=20)
-title_button = Button(root, text="Add Title", width=20)
-description_button = Button(root, text="Add Description", width=20)
-install_button = Button(root, text='Add Installation Process', width=20)
-usage_button = Button(root, text='Add Usage', width=20)
-contributors_button = Button(root, text='Add Contributor', width=20)
-tests_button = Button(root, text='Add Tests', width=20)
-demo_button = Button(root, text='Add Demo Images', width=20)
+github_button = Button(root, text="Add GitHub URL", width=20, bg='#c1bdbd')
+title_button = Button(root, text="Add Title", width=20, bg='#c1bdbd', command=lambda: get_data(title_entry))
+description_button = Button(root, text="Add Description", width=20, bg='#c1bdbd')
+install_button = Button(root, text='Add Installation Process', width=20, bg='#c1bdbd')
+usage_button = Button(root, text='Add Usage', width=20, bg='#c1bdbd')
+contributors_button = Button(root, text='Add Contributor', width=20, bg='#c1bdbd')
+tests_button = Button(root, text='Add Tests', width=20, bg='#c1bdbd')
+demo_button = Button(root, text='Add Demo Images', width=20, bg='#b4b4b4')
  
- ################
- # Here we need to add buttons with all of the shield.io license images and allow for them to choose
- ################
+#License Buttons
+mit_image = ImageTk.PhotoImage(Image.open('run/assets/mit.PNG'))
+mit_button = Button(root, image=mit_image)
+gnu_image = ImageTk.PhotoImage(Image.open('run/assets/gnu.PNG'))
+gnu_button = Button(root, image=gnu_image)
+apache_image = ImageTk.PhotoImage(Image.open('run/assets/apache.PNG'))
+apache_button = Button(root, image=apache_image)
 
- ################
- #Here we need to add some optional badges for them to include
- ################
+#Optional Badge Buttons
+size_image = ImageTk.PhotoImage(Image.open('run/assets/size.PNG'))
+size_button = Button(root, image=size_image)
+lines_image = ImageTk.PhotoImage(Image.open('run/assets/lines.png'))
+lines_button = Button(root, image=lines_image)
+pulls_image = ImageTk.PhotoImage(Image.open('run/assets/closedpr.PNG'))
+pulls_button = Button(root, image=pulls_image)
 
-save_button = Button(root, text='Save', bg='blue', fg='white', width=15)
-exit_button = Button(root, text='Exit', bg='red', fg='white', width=15, command=root.quit)
+save_button = Button(root, text='Save', bg='#848fe5', fg='white', width=15, padx=30)
+exit_button = Button(root, text='Exit', bg='#f94a4a', fg='white', width=15, padx=30, command=root.quit)
 
  #Entries
 github_entry = Entry(root, width=90, borderwidth=3)
@@ -40,34 +52,54 @@ preview_entry = Text(root, width=68, borderwidth=3, height=40)
 #Labels
 info_label = Label(root, text='Add any info you need!')
 preview_label = Label(root, text='Preview of Markdown')
+badges_label = Label(root, text='Optional Badges')
 
 #Label Grids
 info_label.grid(row=0, column=1)
 preview_label.grid(row=0, column=4)
+badges_label.grid(row=3, column=1)
 
 #Entry Grids
-github_entry.grid(row=1, column=0, columnspan=2)
-title_entry.grid(row=2, column=0, columnspan=2)
-description_entry.grid(row=3, column=0, columnspan=2)
-install_entry.grid(row=4, column=0, columnspan=2)
-usage_entry.grid(row=5, column=0, columnspan=2)
-contributors_entry.grid(row=6, column=0, columnspan=2)
-tests_entry.grid(row=7, column=0, columnspan=2)
-demo_entry.grid(row=8, column=0, columnspan=2)
+github_entry.grid(row=2, column=0, columnspan=2)
+title_entry.grid(row=1, column=0, columnspan=2)
+description_entry.grid(row=6, column=0, columnspan=2)
+install_entry.grid(row=7, column=0, columnspan=2)
+usage_entry.grid(row=8, column=0, columnspan=2)
+contributors_entry.grid(row=9, column=0, columnspan=2)
+tests_entry.grid(row=10, column=0, columnspan=2)
+demo_entry.grid(row=11, column=0, columnspan=2)
 
-preview_entry.grid(row=1, column=3, columnspan=3, rowspan=7)
+preview_entry.grid(row=1, column=4, columnspan=3, rowspan=11)
 
 #Button Grids
-github_button.grid(row=1, column=2)
-title_button.grid(row=2, column=2)
-description_button.grid(row=3, column=2)
-install_button.grid(row=4, column=2)
-usage_button.grid(row=5, column=2)
-contributors_button.grid(row=6, column=2)
-tests_button.grid(row=7, column=2)
-demo_button.grid(row=8, column=2)
+github_button.grid(row=2, column=2)
+title_button.grid(row=1, column=2)
+description_button.grid(row=6, column=2)
+install_button.grid(row=7, column=2)
+usage_button.grid(row=8, column=2)
+contributors_button.grid(row=9, column=2)
+tests_button.grid(row=10, column=2)
+demo_button.grid(row=11, column=2)
 
-save_button.grid(row=8, column=4)
-exit_button.grid(row=8, column=5)
+mit_button.grid(row=4, column=0)
+gnu_button.grid(row=4, column=1)
+apache_button.grid(row=4, column=2)
+
+size_button.grid(row=5, column=0)
+lines_button.grid(row=5, column=1)
+pulls_button.grid(row=5, column=2)
+
+save_button.grid(row=12, column=5)
+exit_button.grid(row=12, column=6)
+
+#Seperator
+separator = ttk.Separator(root, orient='vertical')
+separator.grid(column=3, row=0, rowspan=12, sticky='ns')
+
+#Row and column spacing
+root.columnconfigure(2, pad=12)
+root.columnconfigure(3, pad=12)
+root.rowconfigure(8, pad=12)
+root.rowconfigure(6, pad=12)
 
 root.mainloop()
