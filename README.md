@@ -45,5 +45,5 @@ Justin Yates
 
 Manual testing done
 
-## License <a name="License"></a>License
+## <a name="License"></a>License
 
