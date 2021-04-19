@@ -2,6 +2,8 @@
 
 [GitHub Repo](https://github.com/justinyates887/python-readme-generator)
 
+[Download!](https://www.mediafire.com/folder/oh3rsuk9n04bp/EZ-README)
+
 ![license](https://img.shields.io/github/license/justinyates887/python-readme-generator)
 ![size](https://img.shields.io/github/languages/code-size/justinyates887/python-readme-generator)
 ![forks](https://img.shields.io/github/forks/justinyates887/python-readme-generator)
