@@ -23,6 +23,7 @@
 
 > - [Tests](#Tests)
 
+> - [License](#License)
 
 ## <a name="Description"></a>Description
 
@@ -43,3 +44,6 @@ Justin Yates
 ## <a name="Tests"></a>Tests
 
 Manual testing done
+
+## License <a name="License"></a>License
+
