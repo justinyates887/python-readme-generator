@@ -1,7 +1,7 @@
 from tkinter import *
 
 count = 0.0
-table_of_contents = ["##Table of Contents"]
+table_of_contents = ["## Table of Contents"]
 
 def error_window():
     e = Tk()
@@ -18,7 +18,7 @@ def add_title(entry, preview_entry):
     global pe
     pe = preview_entry
     entry_data = entry.get()
-    pe.insert(END, '#' + entry_data + '\n\n')
+    pe.insert(END, '# ' + entry_data + '\n\n')
 
 def add_github(entry, preview_entry):
     pe = preview_entry
@@ -94,7 +94,7 @@ def add_pulls(preview_entry):
 #############################################################################
 
 def add_markdown(entry_data, heading, pe):
-    pe.insert(END, '\n\n##<a name="' + heading + '"></a>' + heading + '\n\n' + entry_data)
+    pe.insert(END, '\n\n## <a name="' + heading + '"></a>' + heading + '\n\n' + entry_data)
     global table_of_contents
     table_of_contents.append('> - [' + heading + '](#' + heading + ')')
 
@@ -115,7 +115,7 @@ def additional(entry, preview_entry):
     entry_data = entry.get()
     global table_of_contents
     table_of_contents.append('> - [Additional Resources and Demo](#additional)')
-    pe.insert(END, '\n\n##<a name="additional"></a>Additional Resources and Demo\n\n' + '[](' + entry_data + ')')
+    pe.insert(END, '\n\n## <a name="additional"></a>Additional Resources and Demo\n\n' + '[](' + entry_data + ')')
 
 def add_toc(preview_entry):
     toc = ''
