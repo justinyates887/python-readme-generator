@@ -41,11 +41,11 @@ For any dev tired of writing their READMEs
 
 ## <a name="Contributors"></a>Contributors
 
-[Justin yates](https://github.com/justinyates887)
+[Justin Yates](https://github.com/justinyates887)
 
 ## <a name="Tests"></a>Tests
 
-Manual testing done
+Manual testing done as of now. I don't see any need for formal tests on a small project like this.
 
 ## <a name="License"></a>License
 
