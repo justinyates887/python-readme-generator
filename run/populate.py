@@ -1,5 +1,8 @@
 from tkinter import *
 
+count = 0.0
+table_of_contents = ["##Table of Contents"]
+
 def error_window():
     e = Tk()
 
@@ -91,7 +94,9 @@ def add_pulls(preview_entry):
 #############################################################################
 
 def add_markdown(entry_data, heading, pe):
-    pe.insert(END, '\n\n##' + heading + '\n\n' + entry_data)
+    pe.insert(END, '\n\n##<a name="' + heading + '"></a>' + heading + '\n\n' + entry_data)
+    global table_of_contents
+    table_of_contents.append('> - [' + heading + '](#' + heading + ')')
 
 def get_text_data(type, entry, preview_entry):
     heading = type
@@ -108,4 +113,18 @@ def get_entry_data(type, entry, preview_entry):
 def additional(entry, preview_entry):
     pe = preview_entry
     entry_data = entry.get()
-    pe.insert(END, '\n\n## Additional Resources and Demo\n\n' + '[](' + entry_data + ')') 
+    global table_of_contents
+    table_of_contents.append('> - [Additional Resources and Demo](#additional)')
+    pe.insert(END, '\n\n##<a name="additional"></a>Additional Resources and Demo\n\n' + '[](' + entry_data + ')')
+
+def add_toc(preview_entry):
+    toc = ''
+    global table_of_contents
+    for heading in table_of_contents:
+        toc += heading + '\n\n'
+    global count
+    for line in preview_entry.get('1.0', 'end-1c').splitlines():
+        if line.startswith('##'):
+            break
+        count = count + 1.0
+    pe.insert(count , toc)

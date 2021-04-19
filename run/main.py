@@ -17,7 +17,7 @@ install_button = Button(root, text='Add Installation Process', width=20, bg='#c1
 usage_button = Button(root, text='Add Usage', width=20, bg='#c1bdbd', command=lambda: get_text_data('Usage', usage_entry, preview_entry))
 contributors_button = Button(root, text='Add Contributor', width=20, bg='#c1bdbd', command=lambda: get_entry_data('Contributors', contributors_entry, preview_entry))
 tests_button = Button(root, text='Add Tests', width=20, bg='#c1bdbd', command=lambda: get_entry_data('Tests', tests_entry, preview_entry))
-demo_button = Button(root, text='Add Additional Links', width=20, bg='#b4b4b4', command=lambda: additional(demo_entry, preview_entry))
+demo_button = Button(root, text='Add Additional Stuff', width=20, bg='#c1bdbd', command=lambda: additional(demo_entry, preview_entry))
  
 #License Buttons
 mit_image = ImageTk.PhotoImage(Image.open('run/assets/mit.PNG'))
@@ -35,6 +35,7 @@ lines_button = Button(root, image=lines_image, command=lambda: add_lines(preview
 pulls_image = ImageTk.PhotoImage(Image.open('run/assets/closedpr.PNG'))
 pulls_button = Button(root, image=pulls_image, command=lambda: add_pulls(preview_entry))
 
+add_toc_button = Button(root, text='Add Table of Contents', width=15, padx=30, bg='#c1bdbd', command=lambda: add_toc(preview_entry))
 save_button = Button(root, text='Save', bg='#848fe5', fg='white', width=15, padx=30, command=lambda: savefileas(preview_entry))
 exit_button = Button(root, text='Exit', bg='#f94a4a', fg='white', width=15, padx=30, command=root.quit)
 
@@ -90,6 +91,7 @@ size_button.grid(row=5, column=0)
 lines_button.grid(row=5, column=1)
 pulls_button.grid(row=5, column=2)
 
+add_toc_button.grid(row=12, column=4)
 save_button.grid(row=12, column=5)
 exit_button.grid(row=12, column=6)
 
