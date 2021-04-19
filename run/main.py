@@ -7,7 +7,7 @@ from PIL import ImageTk,Image
 
 root = Tk()
 root.title('EZ-README')
-root.iconbitmap('run/assets/ico.ico')
+root.iconbitmap('assets/ico.ico')
 
 #Buttons
 github_button = Button(root, text="Add GitHub URL", width=20, bg='#c1bdbd', command=lambda: add_github(github_entry, preview_entry))
@@ -20,19 +20,19 @@ tests_button = Button(root, text='Add Tests', width=20, bg='#c1bdbd', command=la
 demo_button = Button(root, text='Add Additional Stuff', width=20, bg='#c1bdbd', command=lambda: additional(demo_entry, preview_entry))
  
 #License Buttons
-mit_image = ImageTk.PhotoImage(Image.open('run/assets/mit.PNG'))
+mit_image = ImageTk.PhotoImage(Image.open('assets/mit.PNG'))
 mit_button = Button(root, image=mit_image, command=lambda: add_license(preview_entry))
-forks_image = ImageTk.PhotoImage(Image.open('run/assets/forks.PNG'))
+forks_image = ImageTk.PhotoImage(Image.open('assets/forks.PNG'))
 forks_button = Button(root, image=forks_image, command=lambda: add_forks(preview_entry))
-stars_image = ImageTk.PhotoImage(Image.open('run/assets/stars.PNG'))
+stars_image = ImageTk.PhotoImage(Image.open('assets/stars.PNG'))
 stars_button = Button(root, image=stars_image, command=lambda: add_stars(preview_entry))
 
 #Optional Badge Buttons
-size_image = ImageTk.PhotoImage(Image.open('run/assets/size.PNG'))
+size_image = ImageTk.PhotoImage(Image.open('assets/size.PNG'))
 size_button = Button(root, image=size_image, command=lambda: add_size(preview_entry))
-lines_image = ImageTk.PhotoImage(Image.open('run/assets/lines.png'))
+lines_image = ImageTk.PhotoImage(Image.open('assets/lines.png'))
 lines_button = Button(root, image=lines_image, command=lambda: add_lines(preview_entry))
-pulls_image = ImageTk.PhotoImage(Image.open('run/assets/closedpr.PNG'))
+pulls_image = ImageTk.PhotoImage(Image.open('assets/closedpr.PNG'))
 pulls_button = Button(root, image=pulls_image, command=lambda: add_pulls(preview_entry))
 
 add_toc_button = Button(root, text='Add Table of Contents', width=15, padx=30, bg='#c1bdbd', command=lambda: add_toc(preview_entry))
