@@ -39,7 +39,7 @@ For any dev tired of writing their READMEs
 
 ## <a name="Contributors"></a>Contributors
 
-Justin Yates
+[Justin yates](https://github.com/justinyates887)
 
 ## <a name="Tests"></a>Tests
 
