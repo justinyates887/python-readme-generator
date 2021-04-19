@@ -1,4 +1,5 @@
 from populate import *
+from saveas import *
 
 from tkinter import *
 from tkinter import ttk
@@ -16,7 +17,7 @@ install_button = Button(root, text='Add Installation Process', width=20, bg='#c1
 usage_button = Button(root, text='Add Usage', width=20, bg='#c1bdbd', command=lambda: get_text_data('Usage', usage_entry, preview_entry))
 contributors_button = Button(root, text='Add Contributor', width=20, bg='#c1bdbd', command=lambda: get_entry_data('Contributors', contributors_entry, preview_entry))
 tests_button = Button(root, text='Add Tests', width=20, bg='#c1bdbd', command=lambda: get_entry_data('Tests', tests_entry, preview_entry))
-demo_button = Button(root, text='Add Demo Images', width=20, bg='#b4b4b4')
+demo_button = Button(root, text='Add Additional Links', width=20, bg='#b4b4b4', command=lambda: additional(demo_entry, preview_entry))
  
 #License Buttons
 mit_image = ImageTk.PhotoImage(Image.open('run/assets/mit.PNG'))
@@ -34,7 +35,7 @@ lines_button = Button(root, image=lines_image, command=lambda: add_lines(preview
 pulls_image = ImageTk.PhotoImage(Image.open('run/assets/closedpr.PNG'))
 pulls_button = Button(root, image=pulls_image, command=lambda: add_pulls(preview_entry))
 
-save_button = Button(root, text='Save', bg='#848fe5', fg='white', width=15, padx=30)
+save_button = Button(root, text='Save', bg='#848fe5', fg='white', width=15, padx=30, command=lambda: savefileas(preview_entry))
 exit_button = Button(root, text='Exit', bg='#f94a4a', fg='white', width=15, padx=30, command=root.quit)
 
  #Entries
@@ -101,5 +102,9 @@ root.columnconfigure(2, pad=12)
 root.columnconfigure(3, pad=12)
 root.rowconfigure(8, pad=12)
 root.rowconfigure(6, pad=12)
+
+#Scrollbar
+scrollV = Scrollbar(root, orient=VERTICAL)
+scrollV.config(command=preview_entry.yview)
 
 root.mainloop()

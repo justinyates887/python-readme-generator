@@ -104,3 +104,8 @@ def get_entry_data(type, entry, preview_entry):
     pe = preview_entry
     entry_data = entry.get()
     add_markdown(entry_data, heading, pe)
+
+def additional(entry, preview_entry):
+    pe = preview_entry
+    entry_data = entry.get()
+    pe.insert(END, '\n\n## Additional Resources and Demo\n\n' + '[](' + entry_data + ')') 
