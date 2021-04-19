@@ -31,7 +31,9 @@ An easy readme generator coded in Python with a User Interface. No more typing u
 
 ## <a name="Installation"></a>Installation
 
-Just run the .exe in build and you're good to go!
+Just run the .exe in build and you're good to go! You can download the .exe folder [here](https://www.mediafire.com/folder/oh3rsuk9n04bp/EZ-README)
+
+All source is within the /run folder.
 
 ## <a name="Usage"></a>Usage
 
