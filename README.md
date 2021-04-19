@@ -30,7 +30,7 @@ An easy readme generator coded in Python with a User Interface. No more typing u
 
 ## <a name="Installation"></a>Installation
 
-Just run the .exe and you're good to go!
+Just run the .exe in build and you're good to go!
 
 ## <a name="Usage"></a>Usage
 
